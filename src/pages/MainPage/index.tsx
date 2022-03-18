@@ -1,11 +1,10 @@
 import { FC, useEffect, useState } from "react";
-import Loader from "../../components/Loader";
+import Blur from "../../components/Blur";
 import Table from "../../components/Table";
 import Layout from "../../layout/Gradient";
 import { useAppDispatch, useAppSelector } from "../../state";
 import { addDogsRequest, getDogsRequest } from "../../state/breeds/actions";
 import {
-  getDogs,
   getDogsIsLoading,
   getScrolledDogs,
 } from "../../state/breeds/selectors";
@@ -40,29 +39,31 @@ const MainPage: FC = () => {
     if (
       e.target.documentElement.scrollHeight -
         (window.innerHeight + e.target.documentElement.scrollTop) ===
-      0
+        0 &&
+      page <= Math.ceil(200 / limit)
     ) {
+      setPage(page + 1);
       dispatch(
         addDogsRequest({
           limit,
           page,
         })
       );
-      setPage((prev) => prev + 1);
     }
   };
 
   const header: string[] = ["ID", "Name", "Breed", "Photo"];
 
   return (
-    <Layout>
-      {dogsIsLoading && <Loader />}
-      <Table
-        header={header}
-        body={scrolledDogs}
-        dogsIsLoading={dogsIsLoading}
-      />
-    </Layout>
+    <Blur>
+      <Layout>
+        <Table
+          header={header}
+          body={scrolledDogs}
+          dogsIsLoading={dogsIsLoading}
+        />
+      </Layout>
+    </Blur>
   );
 };
 

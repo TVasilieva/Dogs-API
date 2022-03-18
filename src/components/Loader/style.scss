@@ -1,17 +1,6 @@
-.overlay {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.5);
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-  z-index: 2;
-}
-
 .progress {
   position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%);
-  z-index: 3;
+  bottom: 20px !important;
+  right: 40px !important;
+  z-index: 5;
 }

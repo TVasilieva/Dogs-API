@@ -5,7 +5,6 @@ import { DogsReducer } from "./types";
 const initialState: DogsReducer = {
   dogs: [],
   dogsScrolled: [],
-  page: 0,
   dogsIsLoading: false,
   dogsError: null,
 };

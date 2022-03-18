@@ -17,9 +17,16 @@
       background-color: white;
       border-radius: 5px;
       text-transform: uppercase;
+      width: 150px;
       font: {
         size: 1.1em;
         weight: 800;
+      }
+      @media (max-width: 420px) {
+        font: {
+          size: 16px;
+          weight: 600;
+        }
       }
     }
   }
@@ -30,16 +37,30 @@
       &_img {
         display: flex;
         justify-content: center;
+        min-width: 50px;
         &:hover {
           cursor: pointer;
           transform: scale(1.05);
           transition: 0.5s;
         }
       }
+      &_empty {
+        height: 100%;
+        padding: 50px;
+        text-align: center;
+        font: {
+          size: 1.3em;
+          weight: 700;
+          family: "Fira Sans", sans-serif;
+        }
+        text: {
+          transform: uppercase;
+        }
+        letter-spacing: 0.42em;
+        color: rgba(0, 0, 0, 0.3);
+      }
     }
-    &_epmty {
-      background-color: rgba(255, 255, 255, 0.4);
-    }
+
     &-row:nth-child(odd) {
       background-color: rgba(255, 255, 255, 0.4);
     }

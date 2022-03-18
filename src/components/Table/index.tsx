@@ -23,7 +23,7 @@ const Table: FC<ComponentProps> = ({ header, body, dogsIsLoading }) => {
           <img
             alt={el.name}
             src={el.image.url || ""}
-            style={{ width: "150px" }}
+            style={{ width: "100%" }}
           />
         </td>
       </tr>
@@ -37,11 +37,14 @@ const Table: FC<ComponentProps> = ({ header, body, dogsIsLoading }) => {
         <tr className="table__header-row">{headers}</tr>
       </thead>
       <tbody className="table__body">
+        {dogsIsLoading && <Loader />}
         {dogs ? (
           dogs
         ) : (
           <tr className="table__body-row">
-            <td className="table__body-cell">Dog's list is empty</td>
+            <td className="table__body-cell_empty" colSpan={4}>
+              Dog's list is empty
+            </td>
           </tr>
         )}
       </tbody>

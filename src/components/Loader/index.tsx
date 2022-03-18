@@ -2,17 +2,12 @@ import { FC } from "react";
 import "./style.scss";
 
 import { CircularProgress } from "@mui/material";
-import Portal from "../Portal";
 
 const Loader: FC = () => {
   return (
-    <Portal>
-      <div className="overlay">
-        <div className="progress">
-          <CircularProgress />
-        </div>
-      </div>
-    </Portal>
+    <div className="progress">
+      <CircularProgress />
+    </div>
   );
 };
 
