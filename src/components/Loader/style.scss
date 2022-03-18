@@ -1,5 +1,6 @@
 .overlay {
   position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
   top: 0px;
   left: 0px;
   width: 100vw;
@@ -11,6 +12,6 @@
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -50%);
   z-index: 3;
 }
