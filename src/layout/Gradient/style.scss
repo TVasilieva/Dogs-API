@@ -1,0 +1,22 @@
+.bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(35, 175, 93, 0.6),
+    rgba(109, 179, 242, 0.6)
+  );
+}
+
+.container {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  justify-content: center;
+}

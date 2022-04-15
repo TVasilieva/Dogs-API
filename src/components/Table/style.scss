@@ -1,0 +1,33 @@
+.table {
+  width: 100%;
+  &__caption {
+    margin: 50px 0 20px 0;
+    color: white;
+    text-transform: uppercase;
+    font: {
+      size: 3em;
+      weight: 800;
+    }
+    letter-spacing: 5px;
+  }
+  &__header {
+    &-row {
+      text-transform: uppercase;
+    }
+    &-cell {
+      padding: 8px;
+      background-color: aliceblue;
+      border-radius: 5px;
+      font: {
+        size: 1.1em;
+        weight: 800;
+      }
+    }
+  }
+  &__body {
+    &-row {
+    }
+    &-cell {
+    }
+  }
+}
