@@ -1,14 +1,28 @@
 import { FC } from "react";
+import Loader from "../Loader";
 
 import "./style.scss";
 import ComponentProps from "./types";
 
-const Table: FC<ComponentProps> = ({ header }) => {
+const Table: FC<ComponentProps> = ({ header, body, dogsIsLoading }) => {
   const headers = header.map((el) => {
     return (
       <th className="table__header-cell" key={el}>
         {el}
       </th>
+    );
+  });
+
+  const dogs = body.map((el) => {
+    return (
+      <tr className="table__body-row" key={el.id}>
+        <td className="table__body-cell">{el.id}</td>
+        <td className="table__body-cell">{el.name}</td>
+        <td className="table__body-cell">{el.bred_for}</td>
+        <td className="table__body-cell_img">
+          <img alt={el.name} src={el.image.url} style={{ width: "150px" }} />
+        </td>
+      </tr>
     );
   });
 
@@ -18,14 +32,11 @@ const Table: FC<ComponentProps> = ({ header }) => {
       <thead className="table__header">
         <tr className="table__header-row">{headers}</tr>
       </thead>
-      <tbody className="table__body">
-        <tr className="table__body-row">
-          <td className="table__body-cell"></td>
-          <td className="table__body-cell"></td>
-          <td className="table__body-cell"></td>
-          <td className="table__body-cell"></td>
-        </tr>
-      </tbody>
+      {dogsIsLoading ? (
+        <Loader />
+      ) : (
+        <tbody className="table__body">{dogs}</tbody>
+      )}
     </table>
   );
 };

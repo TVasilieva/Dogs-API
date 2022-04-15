@@ -1,4 +1,7 @@
+import { GetDogsResponse } from "../../api/types";
+
 export default interface ComponentProps {
   header: string[];
-  body?: any;
+  body: GetDogsResponse[];
+  dogsIsLoading: boolean;
 }
